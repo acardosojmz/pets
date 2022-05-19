@@ -8,10 +8,10 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface PetDao{
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insert(quote: PetEntity)
+    fun insert(pet: PetEntity)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(quotes: List<PetEntity>)
+    fun insertAll(pets: List<PetEntity>)
 
     @Query("SELECT * FROM pet ORDER BY name ASC")
     fun getPets(): Flow<List<PetEntity>>
