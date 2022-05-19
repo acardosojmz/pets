@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">pets</string>
+    <string name="name">Nombre de la mascota</string>
+    <string name="race">Raza</string>
+    <string name="species">Especie</string>
+    <string name="birth_date">Fecha de nacimiento</string>
+    <string name="image">Imagen</string>
+    <string name="description">Descripcion</string>
+    <string name="save">Guardar</string>
+    <string name="ok">OK</string>
+
+    <string name="add_pets">Agregar mascota</string>
+    <string name="list_pets">Listar mascotas</string>
+</resources>
