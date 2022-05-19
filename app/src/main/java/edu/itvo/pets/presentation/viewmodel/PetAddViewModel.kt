@@ -19,11 +19,9 @@ import javax.inject.Inject
 class PetAddViewModel @Inject constructor (
     private val addPetUseCase: AddPetUseCase,
 ): ViewModel() {
-    private val petResponseMutableStateFlow = MutableStateFlow(
-        PetResponse(false, message = "", data= listOf())
-    )
-    val petResponse: StateFlow<PetResponse> = petResponseMutableStateFlow
 
+    private  val _status = MutableStateFlow(String())
+    val status : StateFlow<String> = _status
 
     suspend fun   addPet(pet:PetModel) {
         viewModelScope.launch(Dispatchers.IO) {

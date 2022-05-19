@@ -69,8 +69,8 @@ class PetAdd : AppCompatActivity() {
 
     private fun observer(){
         lifecycleScope.launch {
-            val response= petViewModel.petResponse
-            response.collect()
+            val status= petViewModel.status
+            status.collect()
         }
     }
 }
