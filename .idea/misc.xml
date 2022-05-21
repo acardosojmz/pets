@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_pets_24.xml" value="0.211" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/layout/activity_pet_add.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_pet_list.xml" value="0.2630208333333333" />
         <entry key="app/src/main/res/layout/dialog_layout.xml" value="0.12590579710144928" />
+        <entry key="app/src/main/res/layout/petitem.xml" value="0.1" />
       </map>
     </option>
   </component>

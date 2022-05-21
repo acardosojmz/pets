@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.btnListPets.setOnClickListener {
-            val intent= Intent(this,PetAdd::class.java)
+            val intent= Intent(this,PetList::class.java)
             startActivity(intent)
         }
     }

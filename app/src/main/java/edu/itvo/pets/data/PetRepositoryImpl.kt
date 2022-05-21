@@ -12,8 +12,7 @@ import javax.inject.Singleton
 class PetRepositoryImpl @Inject constructor (private val localDataSource: PetLocalDataSource):
     PetRepository {
     override suspend  fun getPets(): Flow<PetResponse?> {
-        val pets = localDataSource.getPets()
-        return (pets)
+        return localDataSource.getPets()
     }
 
     override suspend fun getPetRandom(): Flow<PetResponse?> {

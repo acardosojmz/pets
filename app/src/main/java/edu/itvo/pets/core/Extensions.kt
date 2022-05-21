@@ -7,10 +7,6 @@ import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.flatMapConcat
 import kotlinx.coroutines.flow.toList
 
-@kotlinx.coroutines.FlowPreview
-suspend fun <T> Flow<List<T>>.convertToList() =
-    flatMapConcat { it.asFlow() }.toList()
-
 fun PetEntity.toPetModel() = PetModel(
     id=id,
     name = name,

@@ -4,4 +4,8 @@
     <dimen name="right">8dp</dimen>
     <dimen name="top">8dp</dimen>
     <dimen name="bottom">8dp</dimen>
+    <dimen name="card_elevation">8dp</dimen>
+    <dimen name="card_corner_radius">16dp</dimen>
+    <dimen name="padding">8dp</dimen>
+
 </resources>
