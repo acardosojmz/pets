@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">pets</string>
+    <string name="id">Id</string>
     <string name="name">Nombre de la mascota</string>
     <string name="race">Raza</string>
     <string name="species">Especie</string>

@@ -1,5 +1,6 @@
 package edu.itvo.pets.data
 
+import android.util.Log
 import edu.itvo.pets.core.toEntity
 import edu.itvo.pets.core.toListPetModel
 import edu.itvo.pets.core.toPetModel
@@ -26,7 +27,6 @@ class PetLocalDataSourceImpl  @Inject constructor(private val petDao: PetDao): P
 
     override suspend fun getPetRandom(): Flow<PetResponse> {
         val pet= petDao.getPetRandom().map { it.toPetModel() }.first()
-        //val data = flow { emit(listOf(pet.first()))}.convertToList()
         return  flow { emit(PetResponse(true, "list pets", listOf(pet))) }
     }
 
@@ -42,6 +42,8 @@ class PetLocalDataSourceImpl  @Inject constructor(private val petDao: PetDao): P
 
 
     override suspend fun update(pet: PetModel) {
+        Log.e("IMPL", "Send data for editing from Update PetLocalDatasourceImpl")
+        Log.e("PET",pet.toEntity().toString() )
         petDao.update (pet.toEntity())
     }
 

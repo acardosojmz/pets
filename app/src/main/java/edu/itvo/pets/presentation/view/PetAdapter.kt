@@ -7,10 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.CircleCropTransformation
 import edu.itvo.pets.R
+import edu.itvo.pets.core.utils.CellClickListener
 import edu.itvo.pets.data.model.PetModel
 import edu.itvo.pets.databinding.PetitemBinding
 
-class PetAdapter(private val listImageSound: List<PetModel>) :
+class PetAdapter(private val listImageSound: List<PetModel>,
+                 private val cellClickListener: CellClickListener
+) :
     RecyclerView.Adapter<PetAdapter.ViewHolder>() {
 
 
@@ -46,8 +49,14 @@ class PetAdapter(private val listImageSound: List<PetModel>) :
                         transformations(CircleCropTransformation())
                     }
                 }
+                binding.cvPet.setOnClickListener{
+                    cellClickListener.onCellClickListener(this)
+                }
             }
+
+
         }
+
 
     }
 
