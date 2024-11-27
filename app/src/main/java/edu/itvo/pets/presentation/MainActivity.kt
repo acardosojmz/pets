@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import dagger.hilt.android.AndroidEntryPoint
 import edu.itvo.pets.presentation.composables.Pet
+import edu.itvo.pets.presentation.screens.ListPetScreen
 import edu.itvo.pets.presentation.ui.theme.PetsTheme
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -44,7 +45,8 @@ class MainActivity : ComponentActivity() {
                         )
                     },
                     content = { innerPadding ->
-                        Pet(modifier = Modifier.padding(innerPadding))
+                       // Pet(modifier = Modifier.padding(innerPadding), context = this)
+                        ListPetScreen(modifier = Modifier.padding(innerPadding))
                     }
                 )
             }

@@ -1,6 +1,8 @@
 package edu.itvo.pets.presentation.composables
 
 
+import android.content.Context
+import android.util.Log
 import androidx.compose.foundation.layout.Column
 
 import androidx.compose.foundation.layout.Spacer
@@ -37,16 +39,19 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import edu.itvo.pets.core.utils.loadJsonFromAssets
 import edu.itvo.pets.presentation.viewmodel.PetViewModel
 
 @Composable
 fun Pet(viewModel: PetViewModel = hiltViewModel(),
-        modifier: Modifier = Modifier){
+        modifier: Modifier = Modifier, context: Context
+){
     val state  by  viewModel.uiState.collectAsStateWithLifecycle()
     var hasSaved by remember { mutableStateOf(false) }
     val scrollState = rememberScrollState()
-
-
+    val petsType = remember {
+        loadJsonFromAssets(context, "pettype.json")
+    }
     Card (modifier = modifier.fillMaxWidth()) {
         Column(
             modifier = Modifier
@@ -99,7 +104,7 @@ fun Pet(viewModel: PetViewModel = hiltViewModel(),
                 },
             )
             Spacer(modifier = Modifier.height(8.dp))
-
+            /*
             OutlinedTextField(
                     value = state.type,
                     onValueChange = { viewModel.onEvent(PetViewModel.PetEvent.TypeChanged(it)) },
@@ -122,7 +127,14 @@ fun Pet(viewModel: PetViewModel = hiltViewModel(),
                     },
 
                 )
-                Spacer(modifier = Modifier.height(8.dp))
+
+             */
+
+            SpinnerFromJson(
+                items = petsType, viewModel
+            )
+
+            Spacer(modifier = Modifier.height(8.dp))
             OutlinedTextField(
                 value = state.race,
                 onValueChange = { viewModel.onEvent(PetViewModel.PetEvent.RaceChanged(it)) },

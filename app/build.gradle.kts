@@ -30,15 +30,16 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "21"
     }
     buildFeatures {
         compose = true
     }
+
 }
 
 dependencies {
@@ -60,6 +61,7 @@ dependencies {
 
     implementation(libs.androidx.room.runtime)
     kapt ("androidx.room:room-compiler:2.6.1")
+
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     implementation(libs.hilt.android)
@@ -68,6 +70,10 @@ dependencies {
     //----
     implementation(libs.androidx.material.icons.extended)
     implementation(libs.gson)
+    //--- 
+    implementation(libs.coil.compose)
+
+
     //---------------------------
 
 

@@ -1,5 +1,6 @@
 package edu.itvo.pets.presentation.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -51,7 +52,8 @@ class PetViewModel @Inject constructor(private val petUseCase: PetUseCase):  Vie
                         type = event.type, race = event.race, birthdate = event.birthdate,
                         image = event.image,
                     )
-                    println(pet)
+
+                    Log.e("VIEWMODEL", pet.toString())
                     viewModelScope.launch(Dispatchers.IO) {
                         petUseCase.addPet(pet)
                     }

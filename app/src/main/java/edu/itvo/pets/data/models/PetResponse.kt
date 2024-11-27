@@ -10,5 +10,5 @@ data class PetResponse(
     var message: String,
 
     @SerializedName("data")
-    var data: List<PetModel?>?
+    var data: List<PetModel> = emptyList()
 )
