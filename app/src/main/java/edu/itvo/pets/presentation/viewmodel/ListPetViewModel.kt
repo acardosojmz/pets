@@ -1,10 +1,13 @@
 package edu.itvo.pets.presentation.viewmodel
 
+import android.content.Context
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import edu.itvo.pets.data.models.PetResponse
 import edu.itvo.pets.domain.usecases.PetUseCase
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -31,4 +34,11 @@ class ListPetViewModel@Inject constructor(private val petUseCase: PetUseCase):  
             }
         }
     }
+    fun onDeleteClicked(id: Int ) {
+        viewModelScope.launch (Dispatchers.IO){
+            petUseCase.delete(petId = id)
+        }
+        loadPets()
+    }
+
 }

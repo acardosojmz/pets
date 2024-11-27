@@ -44,7 +44,7 @@ fun ListPetScreen(viewModel: ListPetViewModel = hiltViewModel(),
                         contentPadding = PaddingValues(bottom = 16.dp)
                     ) {
                         items(pets) { pet ->
-                            PetCard(pet)
+                            PetCard(pet, viewModel = viewModel)
                         }
                     }
                 } else {

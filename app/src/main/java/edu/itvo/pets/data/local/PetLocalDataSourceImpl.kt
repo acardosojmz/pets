@@ -50,4 +50,7 @@ class PetLocalDataSourceImpl
         petDao.update (pet.toEntity())
     }
 
+    override suspend fun delete(petId: Int) {
+        petDao.delete(petId)
+    }
 }

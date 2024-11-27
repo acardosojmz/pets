@@ -36,4 +36,8 @@ class PetRepositoryImpl
     override suspend fun addPets(pets: List<PetModel>) {
         localDataSource.insertAll(pets)
     }
+
+    override suspend fun deletePet(petId: Int) {
+        localDataSource.delete(petId)
+    }
 }

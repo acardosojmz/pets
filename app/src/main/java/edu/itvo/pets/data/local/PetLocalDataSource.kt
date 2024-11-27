@@ -11,4 +11,5 @@ interface PetLocalDataSource {
     suspend fun  insertAll(pets : List<PetModel>)
     suspend fun  insert(pet : PetModel)
     suspend fun  update(pet : PetModel)
+    suspend fun  delete(petId : Int)
 }
