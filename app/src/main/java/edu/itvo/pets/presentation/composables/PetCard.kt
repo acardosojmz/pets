@@ -50,17 +50,15 @@ fun PetCard(pet: PetModel) {
                 style = MaterialTheme.typography.headlineLarge,
                 fontWeight = FontWeight.Bold
             )
-
-            Text(
-                text = pet.type,
-                style = MaterialTheme.typography.bodySmall,
-                color = Color.Gray
-            )
-
             Text(
                 text = pet.description,
                 style = MaterialTheme.typography.bodySmall,
                 modifier = Modifier.padding(top = 4.dp)
+            )
+            Text(
+                text = pet.type,
+                style = MaterialTheme.typography.bodySmall,
+                color = Color.Gray
             )
 
             Text(

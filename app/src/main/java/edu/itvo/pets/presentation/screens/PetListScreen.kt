@@ -17,7 +17,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import edu.itvo.pets.presentation.composables.PetCard
-import edu.itvo.pets.presentation.composables.PetItem
 import edu.itvo.pets.presentation.viewmodel.ListPetViewModel
 
 @Composable

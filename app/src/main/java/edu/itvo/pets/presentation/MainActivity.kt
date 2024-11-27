@@ -45,7 +45,7 @@ class MainActivity : ComponentActivity() {
                         )
                     },
                     content = { innerPadding ->
-                       // Pet(modifier = Modifier.padding(innerPadding), context = this)
+                        //Pet(modifier = Modifier.padding(innerPadding), context = this)
                         ListPetScreen(modifier = Modifier.padding(innerPadding))
                     }
                 )
